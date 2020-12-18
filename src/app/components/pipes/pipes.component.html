@@ -1,0 +1,92 @@
+<h2>Pipes <small>Angular</small></h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <th>Variable</th>
+                <th>PIPE</th>
+                <th>Salida</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{Nombre}}</td>
+                    <td>Uppercase</td>
+                    <!-- Funcionan los Pipes -->
+                    <!-- {{ 1. Nombre de variable o propiedad, 2. Introducir el símbolo '|', 3. Nombre del pipe a utilizar}} -->
+                    <!-- {{ 1- Propiedad 2- | 3- PipeName }} -->
+                    <td>{{Nombre | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{Nombre}}</td>
+                    <td>Lowercase</td>
+                    <td>{{Nombre | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{Nombre}}</td>
+                    <td>slice:3</td>
+                    <td>{{Nombre | slice:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{Nombre}}</td>
+                    <td>slice:4:9</td>
+                    <td>{{Nombre | slice:4:9}}</td>
+                </tr>
+                <tr>
+                    <td>{{ArrayPrueba}}</td>
+                    <td>slice:4:9</td>
+                    <td>{{ArrayPrueba | slice:4:9}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>Decimal</td>
+                    <td>{{PI | number}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>Decimal</td>
+                    <td>{{PI | number:'2.4-5'}}</td>
+                </tr>
+                <tr>
+                    <td>{{Fecha}}</td>
+                    <td>Date</td>
+                    <td>{{Fecha | date:'short'}}</td>  <!-- Checar tanto 'short' como 'shortDate' -->
+                </tr>
+                <tr>
+                    <td>{{Precio}}</td>
+                    <td>currency</td>
+                    <td>{{Precio | currency:'EUR'}}</td>
+                </tr>
+
+                <!-- Primer Pipe personalizado (Capitalizado) -->
+                <tr>
+                    <td>{{NombreAlterno}}</td>
+                    <td>Capitalizado <small>(Personalizado)</small></td>
+                    <td>{{NombreAlterno | capitalizado:true}}</td>
+                </tr>
+
+                <!-- Segundo Pipe personalizado (Password) -->
+                <tr>
+                    <td>{{Nombre}}</td>
+                    <td>Password <small>(Personalizado)</small>
+                        <br>
+                        <button class="btn btn-secondary" (click)="Cambio = !Cambio">Mostrar/Ocultar</button>
+                    </td>
+                    <td>{{Nombre | password:Cambio}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Slice</h4>
+        <ul>
+            <li *ngFor="let item of ArrayPrueba | slice:2:6">{{item}}</li>
+        </ul>
+
+        <h3>Dom Seguro</h3>
+        <div class="row">
+            <div class="col">
+                <iframe width="560" height="315" [src]="VideoUrl | domSeguro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

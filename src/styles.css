@@ -1,0 +1,52 @@
+body {
+     /*max-height: 200vh;*/
+     background: linear-gradient(to bottom, rgba(100, 100, 128, 0.9), rgba(0, 50, 100, 0.5)) no-repeat center center fixed;
+}
+
+/* You can add global styles to this file, and also import other style files */
+.img-logo {
+     width: 25px;
+}
+
+/* Animación de efecto Fade-in */
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+     }
+     to {
+          opacity: 1;
+     }
+}
+
+.animated {
+     animation-duration: 1s;
+     animation-fill-mode: both;
+}
+
+.fast {
+     animation-duration: 0.4s;
+     animation-fill-mode: both;
+}
+
+.fadeIn {
+     animation-name: fadeIn;
+}
+
+  
+.alcance-pagina {
+     min-height: 91vh;
+     position: relative;
+}
+
+.contenedor-margen {
+     padding-bottom: 100px;
+}
+ 
+footer {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 40px;
+     padding: 55px;
+}

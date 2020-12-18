@@ -1,0 +1,23 @@
+<p *ngFor="let item of Resultados"></p>
+<div class="fast fadeIn">
+    <h2 class="display-4 pb-4">Resultados de la búsqueda <small>(DC y MARVEL)</small></h2>
+    
+    <div *ngIf="Resultados==0"  class="alert alert-info animated fadeIn" role="alert">
+        La búsqueda terminó y no se encontaron resultados que coincidan con "<b>{{strTermino}}</b>".
+    </div>
+
+    <div class="card-columns">
+        <!-- La declaración let i = index contabiliza cada emisión del *ngFor -->
+        <div class="card fadeIn animated" *ngFor="let item of Resultados">
+            <img src="{{item.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Nombre: {{item.nombre}}</h5>
+                <p class="card-text">Bio: {{item.bio.substring(0,100)}}</p>
+                <small>Año: {{item.aparicion}}</small>
+            </div>
+            <!-- La "," después de "hero" la usamos para pasar el índice como parámetro de la ruta -->
+            <button (click) = "Navegar_Res(item._id)" class="btn btn-success btn-block">Ver más...</button>
+            <button (click) = "Eliminar(item._id)" class="btn btn-danger btn-block">Remover</button>
+        </div>
+    </div>
+</div>

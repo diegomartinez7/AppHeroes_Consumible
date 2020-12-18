@@ -1,0 +1,42 @@
+<div class="fast fadeIn">
+    <h2 class="display-4 pb-4">"Registro de héroes"</h2>
+    <form action="">
+        <!-- Nombre -->
+        <div class="form-group row">
+            <label for="nombre" class="col-2 col-form-label">Nombre</label>
+            <div class="col-10">
+                <input type="text" class="form-control" required minlength="4" name="nombre" placeholder="Nombre">
+                <!-- <div *ngIf="nombre.errors?.required" class="invalid-feedback">
+                    Campo obligatorio
+                </div>
+                <div *ngIf="nombre.errors?.minlength" class="invalid-feedback">
+                    Longitud inválida
+                </div> -->
+            </div>
+        </div>
+        <!-- Biografía -->
+        <div class="form-group row">
+            <label for="nombre" class="col-2 col-form-label">Biografía</label>
+            <div class="col-10">
+                <input type="text" class="form-control" required name="bio" placeholder="John Stewart era un agente de la milicia">
+                <!--<div *ngIf="bio.errors?.required" class="invalid-feedback">
+                    Campo obligatorio
+                </div>-->
+            </div>
+        </div>
+        <!-- Ruta de la imagen -->
+        <div class="form-group row">
+            <label for="nombre" class="col-2 col-form-label">Ruta de imagen</label>
+            <div class="col-10">
+                <input type="text" class="form-control" required name="img" placeholder="/carpeta/archivo/etc">
+            </div>
+        </div>
+        <!-- Aparición -->
+        <div class="form-group row">
+            <label for="nombre" class="col-2 col-form-label">Primera aparición</label>
+            <div class="col-10">
+                <input type="text" class="form-control" required name="aparicion" placeholder="">
+            </div>
+        </div>
+    </form>
+</div>

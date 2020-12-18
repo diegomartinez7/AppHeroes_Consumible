@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark border border-success bg-dark">
+    <a [routerLink]="['home']" class="navbar-brand"><img src="../../../../assets/img/A-64.png" alt="" class="img-logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['heroes']">Heroes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['about']">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['pipes']">Extra Pipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['registro']">Registro</a>
+            </li>
+        </ul>
+        <form (submit)="$event.preventDefault()" class="form-inline my-2 my-lg-0">
+            <!-- El atributo #valorBuscar es equivalente a id="valorBuscar" -->
+            <input (keyup.enter)="Search(valorBuscar.value)" class="form-control mr-sm-2" #valorBuscar type="search" placeholder="Search" aria-label="Search">
+            <button (click)="Search(valorBuscar.value)" [routerLink]="['/hero']" class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+        </form>
+    </div>
+</nav>
